@@ -1,8 +1,17 @@
-****** mnist.py ******************
+#mnist.py
 Dataset - MNIST
 Trained using Covolutional Neurat Net.(CNN) build using Keras with tensorflow baackend.
 test accuracy - 0.9871 over 10000 test Samples
 
-*********  train.py  *****************
+#Problems Faced : 
+1)ValueError: Error when checking input: expected conv2d_1_input to have 4 dimensions,
+but got array with shape (60000, 28, 28)
+Solved using -> x_train = np.expand_dims(x_train,axis=3)
+                x_test = np.expand_dims(x_test,axis=3)
+                #above code adds extra dimension to the input x_train ->becomes (60000, 28, 28,1)
+                #similar for x_test.
+ 
+
+#  train.py  *****************
 Without using Convolutional and max pooling ,feeding array of all pixels of image into fully connected layer.
 refer : https://gogul09.github.io/software/digits-recognition-mlp
